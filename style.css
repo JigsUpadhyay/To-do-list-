@@ -79,6 +79,10 @@ body{
     border-bottom: 1px solid #3a4674;
     border-radius: 1.5rem 1rem 1rem 1.5rem ;
   }
+  .task_head > h2 {
+    line-height: 3rem;
+    font-size: 3rem;
+  }
   
   .check {
     width:1rem;
