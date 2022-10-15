@@ -11,48 +11,22 @@
 
 <body>
 
-    <header>
-        <nav>
-            <h1>
-                Task List
-            </h1>
-            <div class="searchBox">
-            <input type="search" name="search" class="search" id="search">
-            <button class="searchBtn">search</button>
 
+    <div class="container">
+        <div class="app">
+          <h2>To DO List</h2>
         </div>
-        </nav>
-        <form action="" id="taskAdd">
-            <input type="text " id="newTaskAdd" placeholder="      Add Your Task">
-            <button type="button " id="AddTaskBtn" value=" Add task ">Add </button>
-        </form>
-
-        <div class="container">
-
-            <div class="wrapper">
-                <h2>Tasks</h2>
-                <div class="tasks">
-                    <div class="task">
-                        <div class="content">
-                            <input type="text" class="text" value="     My task" readonly>
-                        </div>
-                        <div class="btn">
-                            <button class="Edit">Edit</button>
-                            <button class="Delete">Delete</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-    </header>
-
-
-
+      </div>
+      <ul>
+        <li>
+          <input type="checkbox" onclick="taskComplete(this)" class="check">
+          <input type="text" value="My Task" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+          <i class="fa fa-trash" onclick="removeTask(this)"></i>
+        </li>
+      </ul>
+     
+      </div>
+   
     <script src="index.js"></script>
 </body>
 
