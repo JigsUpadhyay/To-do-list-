@@ -1,7 +1,9 @@
     // On app load, get all tasks from localStorage
+    
     window.onload = loadTasks;
 
     // On form submit add task
+
     document.querySelector("form").addEventListener("submit", e =>{
       e.preventDefault();
       addTask();
@@ -14,6 +16,7 @@
       if (localStorage.getItem("tasks") == null) return;
 
       // Get the tasks from localStorage 
+
       let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
       // Loop through the tasks and add them to the list
