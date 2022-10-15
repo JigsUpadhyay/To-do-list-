@@ -12,22 +12,17 @@
     width: 60%;
   }
   
-  @media (max-width:768px) {
-    .app {
-      width: 90%;
-    }
-  }
-
-  .app h1 {
-    color: white;
-    font-size: 40px;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: .5rem .5rem 0 0;
-    background-color: #de3f53;
-    font-family: 'Rajdhani', sans-serif;
-  }
-  .app form {
+  
+.app h1 {
+  color: white;
+  font-size: 40px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: .5rem .5rem 0 0;
+  background-color: #de3f53;
+  font-family: 'Rajdhani', sans-serif;
+}
+.app form {
     display: flex;
     width: 100%;
     background-color: #262e4c;
@@ -70,7 +65,7 @@
     border-radius: 50%;
     background-color: white;
     border: 1px solid rgb(255, 255, 255);
-    -webkit-appearance: none;
+    --webkit-appearance: none;
   }
   
   .check:checked {
@@ -87,6 +82,14 @@
   }
   
   .app ul li i {
+   
+    height: 2rem ;
+    width: 2rem;
+    background-image: url(dlbtn.png);
+    background-size: cover;
+    
+    
+   
     float: right;
     cursor: pointer;
   }
@@ -97,4 +100,10 @@
   .complete {
     color: rgba(192, 192, 192, 0.8);
     text-decoration: line-through;
+  }
+
+  @media (max-width:768px) {
+    .app {
+      width: 90%;
+    }
   }
