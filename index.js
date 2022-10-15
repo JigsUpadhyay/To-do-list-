@@ -47,6 +47,8 @@
       }
 
       // add task to local storage
+
+
       localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
       // create list item, add innerHTML and li
@@ -58,7 +60,9 @@
       <i class="message-square-x" onclick="removeTask(this)"></i>`;
       
       list.insertBefore(li, list.children[0]);
+
       // clear input
+
       task.value = "";
     }
 
@@ -80,8 +84,8 @@
     function removeTask(event){
         let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
         tasks.forEach(task => {
+          
           if (task.task === event.parentNode.children[1].value) {
-            // delete task
             tasks.splice(tasks.indexOf(task), 1);
           }
         });
