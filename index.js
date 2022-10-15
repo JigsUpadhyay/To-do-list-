@@ -16,7 +16,7 @@
       let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
       // Loop through the tasks and add them to the list
-      
+
       tasks.forEach(task => {
         const list = document.querySelector("ul");
         const li = document.createElement("li");
@@ -44,7 +44,7 @@
       // add task to local storage
       localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
-      // create list item, add innerHTML and append to ul
+      // create list item, add innerHTML and li
       const li = document.createElement("li");
       li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
       <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
@@ -93,7 +93,7 @@
     }
 
 
-    // edit the task and update local storage
+    // edit  task 
     function editTask(event) {
       let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
       // check if task is empty
@@ -116,7 +116,7 @@
           task.task = event.value;
         }
       });
-      // update local storage
+     
       localStorage.setItem("tasks", JSON.stringify(tasks));
     }
     
