@@ -8,11 +8,12 @@
     });
 
     function loadTasks() {
-      // check if localStorage has any tasks
-      // if not then return
+ 
+      // check if localStorage has any tasks  if not then return
+     
       if (localStorage.getItem("tasks") == null) return;
 
-      // Get the tasks from localStorage and convert it to an array
+      // Get the tasks from localStorage 
       let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
       // Loop through the tasks and add them to the list
@@ -35,7 +36,11 @@
         alert("Please add some task!");
         return false;
       }
+
+
       // check is task already exist
+
+
       if (document.querySelector(`input[value="${task.value}"]`)) {
         alert("Task already exist!");
         return false;
@@ -45,6 +50,8 @@
       localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
 
       // create list item, add innerHTML and li
+
+
       const li = document.createElement("li");
       li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
       <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
@@ -85,24 +92,32 @@
   
 
     // store current task to track changes
+
     var currentTask = null;
 
     // get current task
+
     function getCurrentTask(event) {
       currentTask = event.value;
     }
 
 
     // edit  task 
+
     function editTask(event) {
       let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
+
       // check if task is empty
+
       if (event.value === "") {
         alert("Task is empty!");
         event.value = currentTask;
         return;
       }
+
+
       // task already exist
+
       tasks.forEach(task => {
         if (task.task === event.value) {
           alert("Task already exist!");
@@ -110,7 +125,10 @@
           return;
         }
       });
+
       // update task
+
+
       tasks.forEach(task => {
         if (task.task === currentTask) {
           task.task = event.value;
